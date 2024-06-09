@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Simple Notes</h2>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Add a new note" #todoText (keyup.enter)="addTodoEnter(todoText, fileInput)">
+    <div class="input-group-append">
+      <button class="btn btn-primary" (click)="addTodoClick(todoText, fileInput)">Add Note</button>
+    </div>
+  </div>
+  <input type="file" #fileInput class="form-control mb-3">
+  <ul class="list-group">
+    <li *ngFor="let todo of todos; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+      <app-todo-item [todo]="todo"></app-todo-item>
+      <button class="btn btn-danger btn-sm" (click)="deleteTodo(i)">X</button>
+    </li>
+  </ul>
+</div>
