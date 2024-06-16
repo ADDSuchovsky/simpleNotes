@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 interface Todo {
   text: string;
-  image?: string; // Base64 string
+  image?: string;
 }
 
 @Injectable({
